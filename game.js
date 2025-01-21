@@ -15,9 +15,9 @@ document.addEventListener('keyup', (e) => { keys[e.code] = false; });
 
 // Initialize audio
 function loadSounds() {
-    shootSound = new Audio('assets/shoot.mp3');
-    explosionSound = new Audio('assets/explosion.mp3');
-    bgMusic = new Audio('assets/background-music.mp3');
+    shootSound = new Audio('shoot.mp3');  // Adjust to your path
+    explosionSound = new Audio('explosion.mp3');  // Adjust to your path
+    bgMusic = new Audio('background-music.mp3');  // Adjust to your path
     bgMusic.loop = true;
     bgMusic.play();
 }
@@ -43,7 +43,7 @@ function loadAssets() {
         speed: 5, 
         image: new Image()
     };
-    player.image.src = 'assets/player.png'; // Player plane image
+    player.image.src = 'player.png';  // Adjust to your path
 
     background = { 
         image: new Image(), 
@@ -51,7 +51,7 @@ function loadAssets() {
         y: 0, 
         speed: 2
     };
-    background.image.src = 'assets/background.png'; // Background image
+    background.image.src = 'background.png';  // Adjust to your path
 }
 
 // Game loop
@@ -113,7 +113,7 @@ function createEnemy() {
     let x = Math.random() * (canvas.width - 50);
     let speed = Math.random() * 3 + 2; // Random speed for enemies
     enemies.push({ x: x, y: 0, width: 50, height: 50, speed: speed, image: new Image() });
-    enemies[enemies.length - 1].image.src = 'assets/enemy.png'; // Enemy image
+    enemies[enemies.length - 1].image.src = 'enemy.png';  // Adjust to your path
 }
 
 // Update enemies
@@ -177,7 +177,7 @@ function drawScore() {
 function startGame() {
     loadSounds();
     loadAssets();
-    setInterval(createEnemy, enemySpawnRate); // Enemy spawn interval
+    setInterval(createEnemy, 1500); // Enemy spawn interval
     gameLoop();
 }
 
@@ -189,3 +189,4 @@ document.addEventListener('keydown', (e) => {
 });
 
 startGame();
+
